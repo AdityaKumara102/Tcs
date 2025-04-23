@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Business Website - TCS Enhanced</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/template-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Barlow', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light background for contrast */
+            color: #333;
+        }
+        header.grid { /* Ensure header grid takes full width */
+            background-color: #2c3e50; /* Dark header background */
+            padding: 10px 0; /* Adjusted padding */
+        }
+        nav a {
+            color: #ecf0f1; /* Light text for dark header */
+            transition: color 0.3s;
+            padding: 15px; /* Ensure consistent padding */
+        }
+        nav a:hover, nav .active-nav a {
+            color: #3498db; /* Highlight color on hover/active */
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle background highlight */
+            border-radius: 4px;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .top-ul {
+           list-style: none;
+           padding: 0;
+           margin: 0;
+           display: flex; /* Align menu items horizontally */
+        }
+        .top-ul li {
+            margin-left: 5px; /* Spacing between menu items */
+        }
+        .carousel-main .item {
+            text-align: center;
+            padding: 60px 20px; /* Increased padding */
+            min-height: 450px; /* Ensure minimum height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-main .background-primary {
+             background-color: rgba(52, 152, 219, 0.8); /* Primary color with transparency */
+        }
+         .carousel-main .background-white {
+             background-color: rgba(255, 255, 255, 0.85); /* White with transparency */
+        }
+
+        .button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 25px; /* Slightly larger button */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+        footer {
+            background-color: #2c3e50; /* Consistent dark footer */
+            color: #ecf0f1;
+            padding: 40px 0 20px 0; /* More padding */
+        }
+        .footer-section h2 {
+            color: #ecf0f1; /* Ensure footer headings are light */
+            margin-bottom: 15px;
+        }
+         .footer-section p, .footer-section a {
+             color: #bdc3c7; /* Slightly muted text color */
+         }
+          .footer-section a:hover {
+             color: #3498db; /* Highlight color on hover */
+         }
+         .copyright {
+            border-top: 1px solid #3e5062; /* Separator line */
+            padding-top: 20px;
+            margin-top: 30px;
+         }
+        /* Search Bar Styles */
+        .search-form {
+            margin-left: 20px; /* Space between nav items and search */
+            display: flex;
+            align-items: center;
+        }
+        .search-form input[type="search"] {
+            padding: 8px 12px;
+            border: 1px solid #566573;
+            border-radius: 4px 0 0 4px;
+            background-color: #566573; /* Darker input background */
+            color: #ecf0f1;
+            min-width: 150px; /* Minimum width */
+            transition: background-color 0.3s;
+        }
+         .search-form input[type="search"]::placeholder {
+            color: #bdc3c7;
+         }
+         .search-form input[type="search"]:focus {
+            background-color: #fff; /* Light background on focus */
+            color: #333;
+            outline: none;
+            border-color: #3498db;
+         }
+        .search-form button {
+            padding: 8px 12px;
+            border: 1px solid #3498db;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-form button:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        /* Service and Feature Box Styling */
+        .feature-box {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #fff; /* White background for boxes */
+            color: #333; /* Dark text for boxes */
+            padding: 30px; /* More padding */
+            border-radius: 5px;
+            height: 100%; /* Make boxes in a row equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+         .feature-box:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+         }
+         .feature-box i {
+             color: #3498db; /* Icon color */
+         }
+          .feature-box h3 {
+             color: #2c3e50; /* Darker heading */
+             margin-top: 15px;
+         }
+         .feature-box img {
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+         }
+
+        /* Specific Section Backgrounds */
+        .background-light-grey { background-color: #ecf0f1; padding-top: 40px; padding-bottom: 40px;}
+        .background-dark-section { background-color: #34495e; color: #ecf0f1; padding: 50px 0; } /* Consistent dark section style */
+         .background-dark-section h2, .background-dark-section p { color: #ecf0f1; }
+
+        /* Testimonial Styling */
+        .testimonial blockquote {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .testimonial cite {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 500;
+            color: #bdc3c7;
+        }
+        .responsive-img {
+             max-width: 100%;
+             height: auto;
+             border-radius: 5px; /* Optional: add rounded corners to images */
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: add subtle shadow */
+        }
+    </style>
+</head>
+<body class="size-1520 primary-color-red"> <!-- Removed background-dark from body, handled by sections -->
+
+    <!-- HEADER -->
+    <header class="grid">
+        <!-- Navigation -->
+        <nav class="s-12 grid background-none"> <!-- Menu Bar Structure -->
+            <!-- Logo -->
+            <a href="index.html" class="m-12 l-3 padding-2x logo">
+                 <!-- LOGO CHANGED TO TCS -->
+                 <img src="img/tcs-logo.png" alt="TCS Logo" style="max-height: 45px;">
+            </a>
+            <!-- Top Navigation -->
+            <div class="top-nav s-12 l-9">
+                <ul class="top-ul right chevron">
+                    <li><a href="index.html" class="active-nav">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Search Form -->
+                <form class="search-form right" action="/search" method="get"> <!-- Search Bar -->
+                    <input type="search" name="query" placeholder="Search..." aria-label="Search website">
+                    <button type="submit"><i class="icon-magnifier"></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main role="main">
+        <!-- Carousel -->
+        <section class="grid">
+            <div class="s-12 margin-bottom carousel-fade-transition owl-carousel carousel-main carousel-nav-white carousel-hide-arrows background-dark">
+                <div class="item background-image" style="background-image:url(img/carousel-01.jpg)">
+                    <p class="text-padding text-strong text-white text-s-size-30 text-size-60 text-uppercase background-primary">TCS Web Solutions</p> <!-- Updated Text Example -->
+                    <p class="text-padding text-size-20 text-dark text-uppercase background-white">Creating stunning websites that captivate and convert.</p>
+                </div>
+                <div class="item background-image" style="background-image:url(img/carousel-02.jpg)">
+                    <p class="text-padding text-strong text-white text-s-size-30 text-size-60 text-uppercase background-primary">Inspired by Technologies</p>
+                    <p class="text-padding text-size-20 text-dark text-uppercase background-white">Innovative solutions tailored to your business needs.</p>
+                </div>
+                <div class="item background-image" style="background-image:url(img/carousel-03.jpg)">
+                    <p class="text-padding text-strong text-white text-s-size-30 text-size-60 text-uppercase background-primary">Digital Transformation Experts</p> <!-- Updated Text Example -->
+                    <p class="text-padding text-size-20 text-dark text-uppercase background-white">Building responsive and interactive web experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1 - Features -->
+        <section class="grid margin text-center">
+             <!-- Feature boxes - Consider updating icons/text to reflect TCS/3D focus if needed -->
+            <div class="s-12 m-6 l-3 padding margin-bottom">
+                <div class="feature-box background-red">
+                    <i class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"></i>
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">Custom Solutions</h3>
+                </div>
+            </div>
+             <div class="s-12 m-6 l-3 padding margin-bottom">
+                <div class="feature-box background-blue">
+                    <i class="icon-sli-layers text-size-60 text-white center margin-bottom-15"></i>
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">Reusable Components</h3>
+                </div>
+             </div>
+            <div class="s-12 m-6 l-3 padding margin-bottom">
+                <div class="feature-box background-orange">
+                    <i class="icon-sli-diamond text-size-60 text-white center margin-bottom-15"></i>
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">Responsive Layout</h3>
+                </div>
+            </div>
+             <div class="s-12 m-6 l-3 padding margin-bottom">
+                <div class="feature-box background-aqua">
+                    <i class="icon-sli-share text-size-60 text-white center margin-bottom-15"></i>
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">Modern Technology</h3>
+                 </div>
+            </div>
+        </section>
+
+        <!-- SECTION - Our Core Services -->
+        <section class="grid margin text-center">
+             <h2 class="s-12 text-dark text-thin text-size-30 text-uppercase margin-top-bottom-40 center">Our Core <b>Services</b></h2>
+             <div class="s-12 m-4 l-4 padding margin-bottom">
+                <div class="feature-box">
+                    <img src="img/service-web.jpg" alt="Web Design Service" class="margin-bottom-15" style="max-width: 80px; border-radius: 50%;">
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-15 text-uppercase">Web Design</h3>
+                    <p>Crafting visually appealing and user-friendly websites tailored to your brand identity.</p>
+                </div>
+            </div>
+             <div class="s-12 m-4 l-4 padding margin-bottom">
+                 <div class="feature-box">
+                     <img src="img/service-dev.jpg" alt="Web Development Service" class="margin-bottom-15" style="max-width: 80px; border-radius: 50%;">
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-15 text-uppercase">Web Development</h3>
+                    <p>Building robust, scalable, and high-performance web applications using modern technologies.</p>
+                </div>
+            </div>
+             <div class="s-12 m-4 l-4 padding margin-bottom">
+                 <div class="feature-box">
+                    <img src="img/service-seo.jpg" alt="SEO Service" class="margin-bottom-15" style="max-width: 80px; border-radius: 50%;">
+                    <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-15 text-uppercase">Digital Marketing</h3> <!-- Updated example service -->
+                    <p>Improving your online visibility and driving targeted traffic through strategic SEO and marketing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 - Parallax Placeholder -->
+        <section class="grid section margin-bottom background-dark-section">
+            <h2 class="s-12 l-6 center text-thin text-size-30 text-white text-uppercase margin-bottom-30">Discover Our <b>Innovative Approach</b></h2>
+            <p class="s-12 l-6 center">We leverage cutting-edge technologies and responsive design principles to create seamless digital experiences. Our parallax effects add depth and engagement to your website.</p>
+        </section>
+
+        <!-- SECTION - Tata Service Work -->
+        <section class="grid margin background-light-grey">
+            <div class="s-12 text-center margin-bottom-40">
+                 <h2 class="text-dark text-thin text-size-30 text-uppercase">Consulting & <b>Tata Service</b> Solutions</h2> <!-- Slightly updated heading -->
+                 <p class="text-size-16">We offer dedicated expertise in implementing and managing various Tata service platforms.</p>
+            </div>
+            <div class="s-12 m-6 l-6 padding-2x">
+                <h3 class="text-strong text-size-25 margin-bottom-15">Platform Integration & Support</h3>
+                <p>Our team provides comprehensive services related to Tata's technology offerings, ensuring seamless integration and ongoing support for your business operations.</p>
+                <ul>
+                    <li>Tata Communications Network Services</li>
+                    <li>Tata Consultancy Services (TCS) Solutions</li>
+                    <li>Cloud & Security Services Integration</li>
+                    <li>Custom Development on Tata Platforms</li>
+                    <li>Managed Services & Support</li>
+                </ul>
+                <a href="contact.html" class="button margin-top-20">Discuss Your Needs</a>
+            </div>
+            <div class="s-12 m-6 l-6 vertical-center">
+                <img class="responsive-img" src="img/tata-service.jpg" alt="Tata Service Solutions Image">
+            </div>
+        </section>
+
+        <!-- SECTION - 3D Design Services (NEW) -->
+        <section class="grid margin background-light-grey">
+            <div class="s-12 text-center margin-bottom-40">
+                <h2 class="text-dark text-thin text-size-30 text-uppercase">Explore Our <b>3D Design</b> Services</h2>
+                <p class="text-size-16">Bringing your concepts to life with cutting-edge 3D modeling and visualization.</p>
+            </div>
+            <div class="s-12 m-6 l-6 vertical-center">
+                <!-- ADD YOUR 3D DESIGN IMAGE HERE -->
+                <img class="responsive-img" src="img/3d-design.jpg" alt="3D Design Showcase">
+            </div>
+            <div class="s-12 m-6 l-6 padding-2x">
+                <h3 class="text-strong text-size-25 margin-bottom-15">Modeling, Rendering & Animation</h3>
+                <p>We provide high-quality 3D design services for various applications, including product visualization, architectural walkthroughs, and interactive simulations.</p>
+                <ul>
+                    <li>High-Polygon & Low-Polygon Modeling</li>
+                    <li>Photorealistic Rendering</li>
+                    <li>Product Prototyping & Visualization</li>
+                    <li>Architectural Visualization (ArchViz)</li>
+                    <li>3D Animation & Motion Graphics</li>
+                </ul>
+                <a href="contact.html#3d-quote" class="button margin-top-20">Get a 3D Design Quote</a>
+            </div>
+        </section>
+
+        <!-- SECTION 3 - Content Block -->
+        <section class="grid margin">
+             <div class="s-12 m-6 padding-2x margin-bottom background-blue">
+                <h2 class="text-strong text-size-40 text-line-height-1">Why Partner with TCS for Your Digital Needs?</h2> <!-- Updated Text -->
+                <p class="margin-top-20 text-size-16">We deliver exceptional results through:</p>
+                <ul>
+                    <li>Global expertise in modern web technologies</li>
+                    <li>Client-centric approach and communication</li>
+                    <li>Focus on performance, security, and scalability</li>
+                    <li>Proven track record of successful projects</li>
+                    <li>Dedicated support and maintenance</li>
+                </ul>
+            </div>
+             <div class="s-12 m-6 vertical-center">
+                 <img class="responsive-img" src="img/img-01.jpg" alt="Team Collaboration">
+             </div>
+        </section>
+
+        <!-- SECTION 4 - References/Portfolio -->
+         <h2 class="s-12 text-dark text-thin text-size-30 text-uppercase margin-top-bottom-40 center text-center">Our Recent <b>Work</b></h2>
+        <section class="grid margin">
+            <a class="s-12 m-6 l-3 margin-bottom" href="gallery.html">
+                <img class="full-img" src="img/portfolio/thumb-01.jpg" alt="Portfolio Item 1"/>
+            </a>
+            <a class="s-12 m-6 l-3 margin-bottom" href="gallery.html">
+                <img class="full-img" src="img/portfolio/thumb-02.jpg" alt="Portfolio Item 2"/>
+            </a>
+            <a class="s-12 m-6 l-3 margin-bottom" href="gallery.html">
+                <img class="full-img" src="img/portfolio/thumb-03.jpg" alt="Portfolio Item 3"/>
+            </a>
+            <a class="s-12 m-6 l-3 margin-bottom" href="gallery.html">
+                <img class="full-img" src="img/portfolio/thumb-04.jpg" alt="Portfolio Item 4"/>
+            </a>
+        </section>
+
+         <!-- SECTION - Testimonials -->
+        <section class="grid section margin-bottom background-dark-section testimonial">
+            <h2 class="s-12 center text-thin text-size-30 text-white text-uppercase margin-bottom-30">What Our <b>Clients Say</b></h2>
+             <div class="s-12 l-8 center">
+                <blockquote>
+                    <p>"Working with TCS was a fantastic experience. They delivered a high-quality website on time and exceeded our expectations. Highly recommended!"</p>
+                    <cite>– Jane Doe, CEO of ExampleCorp</cite>
+                </blockquote>
+                <blockquote>
+                    <p>"Their expertise in development and attention to detail are impressive. Our new platform is fast, reliable, and user-friendly."</p>
+                    <cite>– John Smith, Project Manager at AnotherBiz</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- SECTION - Call to Action -->
+        <section class="grid margin text-center padding">
+             <h3 class="text-dark text-size-25">Ready to Elevate Your Online Presence?</h3>
+             <p class="text-size-16 margin-bottom-20">Let's discuss how TCS can help you achieve your business goals.</p>
+             <a href="contact.html" class="button text-size-20">Get a Free Quote Today</a>
+        </section>
+
+        <!-- SECTION 5 - Social Media Links -->
+        <section class="grid margin text-center">
+            <div class="m-12 l-4 padding-2x background-dark margin-bottom text-right">
+                <h3 class="text-strong text-size-25 text-uppercase margin-bottom-10">Let's Keep In Touch</h3>
+                <p>Follow us on social media for the latest updates, news, and insights.</p>
+            </div>
+            <a href="/" class="s-12 m-6 l-2 padding vertical-center margin-bottom facebook hover-zoom">
+                <i class="icon-sli-social-facebook text-size-60 text-white center"></i>
+            </a>
+            <a href="/" class="s-12 m-6 l-2 padding vertical-center margin-bottom twitter hover-zoom">
+                <i class="icon-sli-social-twitter text-size-60 text-white center"></i>
+            </a>
+            <a href="/" class="s-12 m-6 l-2 padding vertical-center margin-bottom youtube hover-zoom">
+                <i class="icon-sli-social-youtube text-size-60 text-white center"></i>
+            </a>
+            <a href="/" class="s-12 m-6 l-2 padding vertical-center margin-bottom linkedin hover-zoom">
+                <i class="icon-sli-social-linkedin text-size-60 text-white center"></i>
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="grid">
+        <div class="s-12 l-3 m-row-3 margin-bottom background-image" style="background-image:url(img/img-04.jpg)" aria-label="Footer decorative image"></div>
+
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark footer-section">
+            <h2 class="text-strong text-uppercase">About TCS</h2> <!-- Updated Footer Section -->
+            <p>Tata Consultancy Services is an IT services, consulting and business solutions organization that has been partnering with many of the world’s largest businesses in their transformation journeys.</p>
+        </div>
+
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark footer-section">
+            <h2 class="text-strong text-uppercase">Global Presence</h2> <!-- Updated Footer Section -->
+            <img class="full-img" src="img/map.svg" alt="Location Map"/> <!-- You might want a world map SVG here -->
+            <p class="margin-top-10">Operating in multiple countries worldwide. Find your nearest office.</p>
+        </div>
+
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark footer-section">
+            <h2 class="text-strong text-uppercase">Contact Us</h2>
+            <p><b class="text-primary margin-right-10">P</b> [Your TCS Contact Phone]</p> <!-- Update Phone -->
+            <p><b class="text-primary margin-right-10">E</b> <a class="text-primary-hover" href="mailto:contact.tcs@example.com">[Your TCS Contact Email]</a></p> <!-- Update Email -->
+             <p><b class="text-primary margin-right-10">W</b> <a class="text-primary-hover" href="https://www.tcs.com" target="_blank">www.tcs.com</a></p> <!-- Link to main TCS site -->
+        </div>
+
+        <!-- Copyright -->
+        <div class="s-12 text-center margin-bottom copyright">
+            <p class="text-size-12">Copyright © 2024, Tata Consultancy Services. All Rights Reserved.</p> <!-- Updated Copyright -->
+            <p class="text-size-12">All images licensed appropriately. Image usage restrictions may apply.</p>
+            <p><a class="text-size-12 text-primary-hover" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework" target="_blank" rel="noopener noreferrer">Design Framework by Responsee Team</a></p> <!-- Adjusted Credit -->
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+
+</body>
+</html>
